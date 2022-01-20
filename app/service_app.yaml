@@ -1,15 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: iotplayground
-  name: iotplayground-service
+  name: web-app-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
-    app: iotplayground
+    app: web-app
   ports:
-  - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 8888
+    - protocol: TCP
+      port: 8888
+      targetPort: 8888
