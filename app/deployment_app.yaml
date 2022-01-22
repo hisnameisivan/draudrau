@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app-dep
+  name: app-one
   labels:
-    app: web-app
+    app: app-one
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-app
+      app: app-one
   template:
     metadata:
       labels:
-        app: web-app
+        app: app-one
     spec:
       containers:
-        - name: web-app
+        - name: app-one
           image: wil42/playground:v2
           ports:
             - containerPort: 8888
